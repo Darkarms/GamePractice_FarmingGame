@@ -9,6 +9,8 @@ var moveLeft: bool = false
 var moveUp: bool = false
 var moveDown: bool = false
 
+
+
 func _physics_process(_delta: float) -> void:
 	#reset velocity in case it doesnt do it on its own
 	velocity.x = 0
