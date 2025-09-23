@@ -3,13 +3,20 @@ extends CharacterBody2D
 
 const MOVESPEED = 300.0
 const JUMP_VELOCITY = -400.0
+const INTERACT_DISTANCE = 5
 
 var moveRight: bool = false
 var moveLeft: bool = false
 var moveUp: bool = false
 var moveDown: bool = false
 
-
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+			SignalManager.PlayerClicked.emit(event.position, global_position)
+			
+func GetInteractDistance() -> int:
+	return INTERACT_DISTANCE
 
 func _physics_process(_delta: float) -> void:
 	#reset velocity in case it doesnt do it on its own

@@ -15,6 +15,10 @@ run/main_scene="uid://bdxwu17euigtq"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SignalManager="*res://Singletons/SignalManager.gd"
+
 [input]
 
 MoveUp={

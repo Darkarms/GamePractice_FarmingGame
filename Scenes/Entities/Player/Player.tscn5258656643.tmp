@@ -1,19 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://p6oeb42vf8tk"]
 
-[ext_resource type="Script" uid="uid://mq7todj1gxl4" path="res://Scenes/Entities/Player/Player.gd" id="1_qer5h"]
+[ext_resource type="Script" uid="uid://cwvwohtyvyg36" path="res://Scenes/Entities/Player/Player.gd" id="1_qer5h"]
 [ext_resource type="Texture2D" uid="uid://upm5dx7d4enn" path="res://Assets/Entities/Player/Farmer.png" id="2_pmdnf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6d2ml"]
 size = Vector2(28, 63)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_qer5h")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_6d2ml")
 
-[node name="Farmer" type="Sprite2D" parent="."]
+[node name="Farmer" type="Sprite2D" parent="CharacterBody2D"]
 texture = ExtResource("2_pmdnf")
-
-[node name="Camera2D" type="Camera2D" parent="."]
